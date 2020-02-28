@@ -1,0 +1,68 @@
+ 
+input[type=button] {
+	background-color: #4CAF50;
+	border: none;
+	  border-radius: 8px;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+	
+}
+    .errMsgdiv{
+    margin-top: 20px;
+    }
+
+.button:hover {
+    border-color: #06330540;
+    border-style: solid;
+
+  color: white;
+}
+input[type=text] {
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+.distanceTimediv{
+margin-top: 20px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
+}
+
+ @media only screen and (min-width: 768px) {
+.locationDiv{
+width:25%;
+float:left;
+}
+  .mapDiv{
+  float:right;width:75%;
+  }
+      #map {
+           position: relative;
+    overflow: visible;
+      }
+
+  
+ }     /* For mobile phones: */
+ 
+      @media only screen and (max-width: 767px) {
+      
+      .locationDiv{
+      width:100%;
+      }
+      .mapDiv{
+      width:100%;
+      }
+      
+       
+      
+}
