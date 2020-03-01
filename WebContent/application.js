@@ -27,6 +27,7 @@ app.directive('loading', function () {
 					$scope.showDistanceTime = false;
 					$scope.errMsg = "";
 					// $scope.loading = false;
+					$scope.showMap= false;
 					
 					$scope.reset=function(){
 						$scope.pickupLocation ="";
@@ -35,10 +36,12 @@ app.directive('loading', function () {
 						$scope.showReSubmit=false;
 						$scope.showDistanceTime = false;
 						$scope.errMsg = "";
+						$scope.showMap=false;
 					}
 
 					$scope.getRouteDetail = function(pickupLocation,
 							dropLocation) {
+						$scope.showMap=false;
 						$scope.showSubmit=false;
 						$scope.showReSubmit=true;
 						$scope.errMsg = "";
