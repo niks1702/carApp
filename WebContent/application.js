@@ -106,6 +106,7 @@ app.directive('loading', function () {
 												$scope.waypoint3= response.data.path[2];
 												$scope.totalDistance = response.data.total_distance;
 												$scope.totalTime = response.data.total_time;
+												$scope.showMap=true;
 												initMap();
 											}
 											if (response.data.status == "failure") {
@@ -114,8 +115,9 @@ app.directive('loading', function () {
 
 										},
 										function error(response) {
-											$scope.loading = false;
+											
 											if (response.data == "Internal Server Error") {
+												$scope.loading = false;
 												$scope.errMsg = "There is some problem is processing the data.Please try again.";
 											}
 
@@ -140,6 +142,7 @@ app.directive('loading', function () {
 					}
 					console.log("jjjjjjjjeeee");
 					function initMap() {
+						$scope.showMap=true;
 						  console.log("jjjj")
 						  var abbb=new google.maps.LatLng(22.372081, 114.107877);
 						  
@@ -164,16 +167,16 @@ app.directive('loading', function () {
 				     destination: destination,
 				     waypoints: [{
 				         location: new google.maps.LatLng($scope.waypoint1[0],$scope.waypoint1[1]),
-				         stopover: false
+				         stopover: true
 				       },{
 					         location: new google.maps.LatLng($scope.waypoint2[0],$scope.waypoint2[1]),
-					         stopover: false
+					         stopover: true
 					       },{
 						         location: new google.maps.LatLng($scope.waypoint3[0],$scope.waypoint3[1]),
-						         stopover: false
+						         stopover: true
 						       }],
 				    // waypoints: [{"22.372081", "114.107877"}, {"22.326442", "114.167811"},{"22.284419", "114.159510"}],
-						       optimizeWaypoints: true,
+				     optimizeWaypoints: true,
 				     travelMode: 'DRIVING',
 				     avoidTolls: true
 				   }, function(response, status) {
@@ -185,6 +188,8 @@ app.directive('loading', function () {
 				     }
 				   });
 				 }
+				
+				
 				/* function computeTotalDistance(result) {
 				    var total = 0;
 				    var myroute = result.routes[0];
