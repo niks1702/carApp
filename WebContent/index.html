@@ -12,50 +12,57 @@
 <body ng-app="myapp">
 	<div ng-controller="carAppController">
 		<h2>Welcome!</h2>
-	<p> Where would you like to go? </p>
-		<div class="locationDiv" >
-				<table>
-			<tr>
-				<td><label> Start Location </label></td>
-				<td><input type="text" ng-model="pickupLocation" id=startLocation>
-				</td>
-			</tr>
-			<tr>
-				<td><label> Drop-off Point </label></td>
-				<td><input type="text" ng-model="dropLocation" id=stopLocation></td>
-			</tr>
-		</table>
+		<p>Where would you like to go?</p>
+		<div class="locationDiv">
+			<table>
+				<tr>
+					<td><label> Start Location </label></td>
+					<td><input class="locationIcon"
+						placeholder=" Enter pick up location " type="text"
+						ng-model="pickupLocation" id=startLocation></td>
+				</tr>
+				<tr>
+					<td><label> Drop-off Point </label></td>
+					<td><input class="locationIcon"
+						placeholder=" Enter drop location" type="text"
+						ng-model="dropLocation" id=stopLocation></td>
+				</tr>
+			</table>
 
-		<input class="button btn1" type="button" value="Submit" ng-show="showSubmit"
-			ng-click="getRouteDetail(pickupLocation,dropLocation);"> 
-			<input class="button btn1"  type="button" value="Re-Submit" ng-show="showReSubmit"
-			ng-click="getRouteDetail(pickupLocation,dropLocation);">
-			<input class="button" type="button" value="Reset" ng-click="reset()">
-			
-			  <loading></loading>
-		<div ng-show="showDistanceTime" class="distanceTimediv">
-			<div>Total Distance: {{totalDistance}}</div>
-			<div>Total time: {{totalTime}}</div>
-		</div>
+			<input class="button btn1" type="button" value="Submit"
+				ng-show="showSubmit"
+				ng-click="getRouteDetail(pickupLocation,dropLocation);"> <input
+				class="button btn1" type="button" value="Re-Submit"
+				ng-show="showReSubmit"
+				ng-click="getRouteDetail(pickupLocation,dropLocation);"> <input
+				class="button" type="button" value="Reset" ng-click="reset()">
 
-		<div class="errMsgdiv">{{errMsg}}</div>
+			<loading></loading>
+			<div ng-show="showDistanceTime" class="distanceTimediv">
+				<div>Total Distance: {{totalDistance}}</div>
+				<div>Total time: {{totalTime}}</div>
+			</div>
+
+			<div class="errMsgdiv">
+				<p class="errMsg">{{errMsg}}</p>
+			</div>
 		</div>
 		<!-- <div> <img alt="" src="image/loading.gif"/></div> -->
-<div class="mapDiv" ng-show="showMap">
+		<div class="mapDiv" ng-show="showMap">
 
 
-<div id="map" style="width:100%;height:400px"></div>
-</div>
+			<div id="map" style="width: 100%; height: 400px"></div>
+		</div>
 	</div>
 
 	 <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmUCFpNFm96sZHB8Q7qDBgTymxmYbQzyQ" async defer>
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer>
     </script>
-
+	
 	<script src="application.js">
 		
 	</script>
 
-  
+
 </body>
 </html>
