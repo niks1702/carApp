@@ -8,7 +8,7 @@ How to run the application:-
 3. You can run the application locally using the below steps:-
    * Open CMD and run the below command
    * npm install -g http-server
-   *Browse to WebContent folder in the extracted project
+   * Browse to WebContent folder in the extracted project
    * Edit index.html, Replace "YOUR_API_KEY" in the script tag with your google api key.
    * Open CMD directly in WebContent folder and run the below command to start the server
    * http-server ./ -p 8080
